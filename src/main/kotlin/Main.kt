@@ -1,5 +1,5 @@
 import javax.naming.Name
-
+//KOTLIN QUESTIONS
 fun main() {
     var car=Car("harrier","legacy","black",25)
     car.carry(29,4)
@@ -19,6 +19,10 @@ fun main() {
     var human=Human("serah","female","black",50.0,56.4)
     human.rest()
     human.identity()
+    var vehicle=Vehicle("range rover","legacy",23)
+    vehicle.start()
+    var caar=Caar("BMW","legacy",34,"black")
+    caar.start()
 
 
 }
@@ -90,4 +94,17 @@ class Human(var name:String,var gender:String,var color:String,var height:Double
         println("Am $gender and my name is $name")
     }
 }
-
+//Create a class called Vehicle with properties for make, model, and year.
+//Write a method called start that prints "The {make} {model} is starting up."
+open class Vehicle(var make:String,var model:String,var year:Int){
+    open fun start(){
+        println("The $make $model is starting up")
+    }
+}
+//Create a class called Car that extends Vehicle and adds a property for color.
+//Override the start method to print "The {color} {make} {model} is starting up."
+class Caar(make:String, model:String, year:Int,var color:String):Vehicle(make,model,year){
+    override fun start(){
+        println("The $color $make $model")
+    }
+}
